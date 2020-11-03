@@ -2,8 +2,8 @@
 #include<vector>
 #include<fstream>
 
-#define xNodeNumber 41
-#define yNodeNumber 41
+#define xNodeNumber 11
+#define yNodeNumber 11
 #define dx 0.01
 #define dy 0.01
 #define eps0 8.85e-12
@@ -126,9 +126,9 @@ int main()
 		temp = allNodeIdentifier[i][0];
 		p.push_back(temp);
 		b[temp] = 0;
-		//temp = allNodeIdentifier[i][yNodeNumber - 1];
-		//p.push_back(temp);
-		//b[temp] = 0;
+		temp = allNodeIdentifier[i][yNodeNumber - 1];
+		p.push_back(temp);
+		b[temp] = 0;
 	}
 	for (j = 1; j < xNodeNumber - 1; j++)
 	{
@@ -141,9 +141,6 @@ int main()
 		temp = allNodeIdentifier[i][int(yNodeNumber / 2)];
 		p.push_back(temp);
 		b[temp] = potential;
-		//temp = allNodeIdentifier[i][int(yNodeNumber / 2) - 1];
-		//p.push_back(temp);
-		//b[temp] = potential;
 	}
 	int z = p.size();
 	for (i = 0; i < z; i++)
@@ -162,11 +159,12 @@ int main()
 	}
 	//for (i = 0; i < allNodeNumber; i++)
 	//{
-	//	//for (j = 0; j < allNodeNumber; j++)
-	//	//{
-	//	//	cout << K[i][j] << "   ";
-	//	//}
-	//	cout << b[i] << endl;
+	//	for (j = 0; j < allNodeNumber; j++)
+	//	{
+	//		cout << K[i][j] << " ";
+	//	}
+	//	cout << endl;
+	//	//cout << b[i] << endl;
 	//}
 
 	//Çó½âKU=b
